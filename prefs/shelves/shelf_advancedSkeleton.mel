@@ -1,0 +1,233 @@
+global proc shelf_advancedSkeleton () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "FitTools" 
+        -enableBackground 0
+        -align "center" 
+        -label "FitTools" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asFitTools.png" 
+        -image1 "AdvancedSkeleton/asFitTools.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asFitTools.mel\";asFitTools;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "AdvancedSkeleton" 
+        -enableBackground 0
+        -align "center" 
+        -label "AdvancedSkeleton" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/advancedSkeleton.png" 
+        -image1 "AdvancedSkeleton/advancedSkeleton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/advancedSkeleton.mel\";advancedSkeleton;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Utilities" 
+        -enableBackground 0
+        -align "center" 
+        -label "Utilities" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asUtilities.png" 
+        -image1 "AdvancedSkeleton/asUtilities.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asUtilities.mel\";asUtilities;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Utilities" 
+        -enableBackground 0
+        -align "center" 
+        -label "Utilities" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asFace.png" 
+        -image1 "AdvancedSkeleton/asFace.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asFace.mel\";asFace;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "UI" 
+        -enableBackground 0
+        -align "center" 
+        -label "UI" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asUI.png" 
+        -image1 "AdvancedSkeleton/asUI.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asSelectorDesigner.mel\";asSelectorDesigner;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Poser" 
+        -enableBackground 0
+        -align "center" 
+        -label "Poser" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asPoser.png" 
+        -image1 "AdvancedSkeleton/asPoser.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asPoserDesigner.mel\";asPoserDesigner;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Help" 
+        -enableBackground 0
+        -align "center" 
+        -label "Help" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asHelp.png" 
+        -image1 "AdvancedSkeleton/asHelp.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/asHelp.mel\";asHelp;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Selector:biped" 
+        -enableBackground 0
+        -align "center" 
+        -label "Selector:biped" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asBiped.png" 
+        -image1 "AdvancedSkeleton/asBiped.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/Selector/biped.mel\";asSelectorbiped;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Selector:biped" 
+        -enableBackground 0
+        -align "center" 
+        -label "Selector:biped" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "AdvancedSkeleton/asFaceSelector.png" 
+        -image1 "AdvancedSkeleton/asFaceSelector.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "source \"AdvancedSkeleton/Selector/face.mel\";asSelectorface;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+
+} 

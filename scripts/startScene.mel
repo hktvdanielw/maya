@@ -1,0 +1,73 @@
+
+
+
+proc int setOptionMenuGrpChoice( string $menu, string $label )
+{
+	int $id = -1;
+	if (!`control -ex $menu`)
+		return $id;
+		
+	string $choice[] = `optionMenuGrp -q -itemListLong $menu`;
+	int $i = 0;
+	for ($i=0; $i<size($choice); $i++)
+		if (`menuItem -q -label $choice[$i]` == $label)
+		{
+			$id = $i + 1;
+			break;
+		}
+	
+	optionMenuGrp -e -sl $id $menu;
+	return $id;
+}
+
+
+
+global proc startScene(  )
+{
+	changeLinearUnit "cm";			// cm
+	currentUnit -a "degree";		// degree
+	currentUnit -t pal;				// 25fps
+	
+	int $startF = 101;
+	int $endF = 120;
+	int $handle = 3;
+	playbackOptions -e -min $startF -max $endF -ast ($startF-$handle) -aet ($endF+$handle);
+	
+	if (!`window -exists unifiedRenderGlobalsWindow`)
+		unifiedRenderGlobalsWindow;
+	
+	mentalrayUI "";
+	setCurrentRenderer "mentalRay";
+	rendererChanged;
+	
+	// setAttr "defaultRenderGlobals.imageFormat" 5;						// .SGI format
+	// setAttr "defaultRenderGlobals.imfkey" -type "string" "rgb";			// .SGI file extension
+	setOptionMenuGrpChoice( "imageMenuMentalRay", "SGI (rgb)" );			// .SGI format, .SGI file extension
+	changeMentalRayImageFormat;
+	updateMentalRayImageFormatControl;
+	
+	setAttr "miDefaultFramebuffer.datatype" 3;								// 16-bit short RGBA
+	
+	setOptionMenuGrpChoice( "extMenu", "name.#.ext" );						// ext: name.#.ext
+	changeMayaSoftwareFileNameFormat;
+	
+	setAttr "defaultRenderGlobals.extensionPadding" 4;						// padding
+	
+	setAttr "defaultRenderGlobals.startFrame" $startF;						// render start/end frame
+	setAttr "defaultRenderGlobals.endFrame" $endF;
+	
+	setOptionMenuGrpChoice( "resolutionMenu", "HD 1080" );					// res: Full HD
+	changeMayaSoftwareResolution;
+	
+	setAttr "defaultResolution.aspectLock" 1;								// maintain width/height ratio
+	
+    tabLayout -e -sti 4 mentalRayTabLayout;									// production quality
+    fillSelectedTabForTabLayout("mentalRayTabLayout");
+	setOptionMenuGrpChoice( "miRenderQualityMenu", "Production" );
+	miRenderQualityMenuChanged;
+	
+	tabLayout -e -sti 1 mentalRayTabLayout;
+	window -e -vis 0 "unifiedRenderGlobalsWindow";
+}
+
+
